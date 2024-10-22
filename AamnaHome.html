@@ -7,16 +7,10 @@
     <meta charset="UTF-8" />
 
 
-    <script>
-        src = "https://unpk.com/react@17/umd/react.development.js"
-        crossrigin
+    <script src = "https://unpkg.com/react@17/umd/react.development.js"  crossorigin></script>
+    <script src = "https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        
 
-    </script>
-    <script>
-        src = "https://unpk.com/react@17/umd/react-dom.development.js"
-        crossrigin
-
-    </script>
     <title> React </title>
 </head>
 
@@ -33,7 +27,18 @@
 
     <h2> Export to PDF </h2> -->
 
-    <h1> Getting Start with Aamna React </h1>
+    <!-- <h1> Getting Start with Aamna React </h1> -->
+
+
+    <div id="root"></div>
+
+    <script type="text/javascript">
+        ReactDOM.render(
+            React.createElement("h1", null, "Getting Started !"),
+            document.getElementById("root")
+        );
+
+    </script>
 
 
 </body>
