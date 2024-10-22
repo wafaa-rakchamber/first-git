@@ -8,23 +8,25 @@
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
         crossorigin
         ></script>
-
+        
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <title> REACT </title>
     </head>
     <body>
         <div id="root"></div>
 
-       
-         <script type="text/javascript">
-            const heading= React.createElement(
-                "h1",
-                {style: {color:"blue"}},
-                "Heyyyy Everyone!");
+        <script type="text/babel">
             ReactDOM.render(
-                heading,
+                <ul>
+                    <li>aa</li>
+                    <li>bb</li>
+                    <li>cc</li>
+                </ul>,
                 document.getElementById("root")
             );
-             
+
         </script>
+         
+
     </body>
 </html>
