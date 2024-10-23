@@ -29,30 +29,41 @@
     <div id="root"></div>
     <script type="text/babel">
 
-        function Header() {
+        function Header(props) {
             return (
                 <header>
-                    <h1> Aamna's Kitchen</h1>
+                    <h1> {props.name} Kitchen</h1>
 
                 </header>
             )
 
         }
 
-        function Main() {
+        function Main(props) {
             return (
                 <section>
-                    <p>We serve the most delicios food </p>
+                    <p>We serve the most delicios {props.adjective} </p>
 
                 </section>
             )
         }
 
+        function Footer(props) {
+            return (
+                <footer>
+                    <p>All copyright {props.year} </p>
+
+                </footer>
+            )
+        }
+
+
         function App() {
             return (
                 <div>
-                    <Header />
-                    <Main />
+                    <Header name ="Aamna'sss "  />
+                    <Main adjective ="Amazing food and sweet"/>
+                    <Footer year = {new Date().getFullYear()} />
                 </div>
             )
         }
