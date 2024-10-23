@@ -20,27 +20,27 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      function Header(){
+      function Header(props){
         return (
           <header>
-               <h1> Eve's kitchen </h1>
+               <h1> {props.name}'s kitchen </h1>
           </header>
         );
       }
      
-      function Main(){
+      function Main(props){
         return (
           <App />,
           <section>
-               <p> We serve the most delicious food </p>
+               <p> We serve the most {props.adjective} food </p>
           </section>
         );
       }
       function App(){
         return (
           <div>
-               <Header />
-                <Main />
+               <Header name="Cindy"/>
+                <Main adjective="amaizing"/>
           </div>
         );
       }
