@@ -20,19 +20,18 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const robot = "Roboot";
-      const cowboy = "Samer";
-      const moon = "moon";
-      const name = "React";
+      function Header(){
+        return (
+          <header>
+               <h1> Eve's kitchen </h1>
+          </header>
+        );
+      }
+     
 
       
       ReactDOM.render(
-        <ul>
-          <li>{robot}</li>
-          <li>{cowboy}</li>
-          <li>{moon}</li>
-          <li>{name}</li>
-        </ul>,
+        <Header />,
         document.getElementById("root")
       );
     </script>
