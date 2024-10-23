@@ -39,8 +39,25 @@
 
         }
 
+        function Main() {
+            return (
+                <section>
+                    <p>We serve the most delicios food </p>
+
+                </section>
+            )
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <Main />
+                </div>
+            )
+        }
         ReactDOM.render(
-            <Header />,
+            <App />,
             document.getElementById("root")
         );
 
