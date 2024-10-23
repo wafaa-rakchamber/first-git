@@ -37,13 +37,17 @@
                 </header>
             )
         }
+
+   
+
+
         function Main(props) {
             return (
                 <section>
                     <ul>
-                        {props.dishes.map((dish,i) => (
-                            <li key={i}>
-                                {dish}
+                        {props.dishes.map((dish) => (
+                            <li key={dish.id}>
+                                {dish.title}
                             </li>
                         ))}
 
@@ -52,6 +56,8 @@
                 </section>
             );
         }
+
+     
 
         function Footer(props) {
             return (
@@ -63,18 +69,30 @@
         }
 
 
-        const dishes =[
+        const dishes = [
             "Black Bean Suop",
             "BasBosa",
+            "Majbos",
             "Salmon And Potatoes"
         ];
+
+        
+
+
+        const dishObjects = dishes.map(
+            (dish, i) => ({
+                id: i,
+                title: dish
+            })
+        );
+
 
 
         function App() {
             return (
                 <div>
                     <Header name="Aamna'sss " />
-                    <Main adjective="Amazing food and sweet" dishes ={dishes} />
+                    <Main adjective="Amazing food and sweet" dishes={dishObjects} />
                     <Footer year={new Date().getFullYear()} />
                 </div>
             )
