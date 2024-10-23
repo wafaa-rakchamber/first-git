@@ -20,6 +20,11 @@
     <div id="root"></div>
 
     <script type="text/babel">
+      const dishes = [
+        "The Green beans",
+        "The Chicken",
+        "Salmon and Potetos"
+      ];
       function Header(props){
         return (
           <header>
@@ -33,6 +38,11 @@
           <App />,
           <section>
                <p> We serve the most {props.adjective}{" !!! "} food around</p>
+               <ul>
+                {props.dishes.map((dish,i) => (
+                  <li key={i}> {i+1} - {dish}</li>
+                ))}
+                  </ul>
           </section>
         );
       }
@@ -40,7 +50,8 @@
         return (
           <div>
                <Header name="Cindy"/>
-                <Main adjective="amaizing"/>
+                <Main adjective="amaizing" dishes={dishes}/>
+                <footer year={new Date().getFullYear()} />
           </div>
         );
       }
