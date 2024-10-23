@@ -20,52 +20,58 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const dishes = [
-        "The Green beans",
-        "The Chicken",
-        "Salmon and Potetos"
-      ];
+      const dishes = ["The Green beans", "The Chicken", "Salmon and Potetos"];
 
-      const dishesObjects = dishes.map(
-        (dish,i) => ({
-                  id : i,
-                  title : dish
-                })
-                );
+      const dishesObjects = dishes.map((dish, i) => ({
+        id: i,
+        title: dish,
+      }));
 
-      function Header(props){
+      function Header(props) {
         return (
           <header>
-               <h1> {props.name}'s kitchen </h1>
+            <h1> {props.name}'s kitchen </h1>
           </header>
         );
       }
-     
-      function Main(props){
+
+      function Main(props) {
         return (
-          <App />,
-          <section>
-               <p> We serve the most {props.adjective}{" !!! "} food around</p>
-               <ul>
+          (<App />),
+          (
+            <section>
+              <p>
+                {" "}
+                We serve the most {props.adjective}
+                {" !!! "} food around
+              </p>
+              <ul>
                 {props.dishes.map((dish) => (
-                  <li key={dish.id}> {dish.id+1} - {dish.title}</li>
+                  <li key={dish.id}>
+                    {" "}
+                    {dish.id + 1} - {dish.title}
+                  </li>
                 ))}
-                  </ul>
-          </section>
+              </ul>
+            </section>
+          )
         );
       }
-      function App(){
+      function App() {
         return (
           <div>
-               <Header name="Cindy"/>
-                <Main adjective="amaizing" dishes={dishesObjects}/>
-                <footer year={new Date().getFullYear()} />
+            <Header name="Cindy" />
+            <Main adjective="amaizing" dishes={dishesObjects} />
+            <footer year={new Date().getFullYear()} />
           </div>
         );
       }
-      
+
       ReactDOM.render(
-        <App />,
+        <React.Fragment>
+          <App />
+          <App />
+        </React.Fragment>,
         document.getElementById("root")
       );
     </script>
