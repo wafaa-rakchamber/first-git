@@ -25,6 +25,14 @@
         "The Chicken",
         "Salmon and Potetos"
       ];
+
+      const dishesObjects = dishes.map(
+        (dish,i) => ({
+                  id : i,
+                  title : dish
+                })
+                );
+
       function Header(props){
         return (
           <header>
@@ -39,8 +47,8 @@
           <section>
                <p> We serve the most {props.adjective}{" !!! "} food around</p>
                <ul>
-                {props.dishes.map((dish,i) => (
-                  <li key={i}> {i+1} - {dish}</li>
+                {props.dishes.map((dish) => (
+                  <li key={dish.id}> {dish.id+1} - {dish.title}</li>
                 ))}
                   </ul>
           </section>
@@ -50,7 +58,7 @@
         return (
           <div>
                <Header name="Cindy"/>
-                <Main adjective="amaizing" dishes={dishes}/>
+                <Main adjective="amaizing" dishes={dishesObjects}/>
                 <footer year={new Date().getFullYear()} />
           </div>
         );
