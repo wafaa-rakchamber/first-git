@@ -38,7 +38,7 @@
             )
         }
 
-   
+
 
 
         function Main(props) {
@@ -57,7 +57,7 @@
             );
         }
 
-     
+
 
         function Footer(props) {
             return (
@@ -76,7 +76,7 @@
             "Salmon And Potatoes"
         ];
 
-        
+
 
 
         const dishObjects = dishes.map(
@@ -90,15 +90,18 @@
 
         function App() {
             return (
-                <div>
+                <React.Fragment>
                     <Header name="Aamna'sss " />
                     <Main adjective="Amazing food and sweet" dishes={dishObjects} />
                     <Footer year={new Date().getFullYear()} />
-                </div>
+                </React.Fragment>
             )
         }
         ReactDOM.render(
-            <App />,
+            <React.Fragment>
+                <App />
+                <App />
+            </React.Fragment>,
             document.getElementById("root")
         );
 
