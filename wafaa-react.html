@@ -23,9 +23,26 @@
                 </header>
             );
            }
+           function Main(){
+            return (
+                <section>
+                    <p>
+                        We serve the most deliciouse food around
+                    </p>
+                </section>
+            );
+           }
+           function App() {
+            return(
+                <div>
+                    <Header />
+                    <Main />
+                </div>
+            );
+           }
 
             ReactDOM.render(
-                <Header />,
+                <App />,
                 document.getElementById("root")
             );
 
