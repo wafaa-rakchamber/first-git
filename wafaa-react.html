@@ -16,10 +16,10 @@
         <div id="root"></div>
 
         <script type="text/babel">
-           function Header(){
+           function Header(props){
             return (
                 <header>
-                    <h1> Eve's Kitchen</h1>
+                    <h1> {props.name}'s Kitchen</h1>
                 </header>
             );
            }
@@ -32,11 +32,26 @@
                 </section>
             );
            }
+
+           function Footer(props){
+            return (
+                <footer>
+                    <p>
+                       Copyright {props.year}
+                    </p>
+                </footer>
+            );
+           }
+
+
            function App() {
             return(
                 <div>
-                    <Header />
+                    <Header name="Cindy"/>
                     <Main />
+                    <Footer 
+                    year={new Date().getFullyear()}
+                    />
                 </div>
             );
            }
