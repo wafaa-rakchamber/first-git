@@ -16,11 +16,16 @@
         <div id="root"></div>
 
         <script type="text/babel">
+            let robot= "aa";
+            let cowboy = "bb";
+            let name = "React";
+
             ReactDOM.render(
                 <ul>
-                    <li>aa</li>
-                    <li>bb</li>
-                    <li>cc</li>
+                    <li>{robot}</li>
+                    <li>{cowboy}</li>
+                    <li>{name.toUpperCase()}</li>
+                    <li>{name.length}</li>
                 </ul>,
                 document.getElementById("root")
             );
